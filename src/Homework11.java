@@ -69,6 +69,7 @@ public class Homework11 {
     Для года создания телефона используйте переменную clientDeviceYear, в которой необходимо указать 2015 год.
     Важно: вложенность больше двух этажей не допускается (условный оператор внутри условного оператора).
      */
+
     private static void definitionOfOperatingSystem(int clientOS, int clientDeviceYear) {
         int currentYear = LocalDate.now().getYear();
         String osVersion = "";
