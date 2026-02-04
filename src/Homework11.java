@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Homework11 {
@@ -69,29 +70,18 @@ public class Homework11 {
     Важно: вложенность больше двух этажей не допускается (условный оператор внутри условного оператора).
      */
     private static void definitionOfOperatingSystem(int clientOS, int clientDeviceYear) {
-        if (clientDeviceYear < 2015) {
-            switch (clientOS) {
-                case 0:
-                    System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-                    break;
-                case 1:
-                    System.out.println("Установите облегченную версию приложения для Android по ссылке");
-                    break;
-                default:
-                    System.out.println("Нет такой операционной системы");
-            }
-        } else {
-            switch (clientOS) {
-                case 0:
-                    System.out.println("Установите версию приложения для iOS по ссылке");
-                    break;
-                case 1:
-                    System.out.println("Установите версию приложения для Android по ссылке");
-                    break;
-                default:
-                    System.out.println("Нет такой операционной системы");
-            }
+        int currentYear = LocalDate.now().getYear();
+        String osVersion = "";
+        String yearOfProduction = " ";
+        if (clientDeviceYear < currentYear) {
+            yearOfProduction = " облегчённую ";
         }
+        if (clientOS == 0) {
+            osVersion = " Android ";
+        } else {
+            osVersion = " iOS ";
+        }
+        System.out.println("Установите" + yearOfProduction + "версию приложения для" + osVersion + "по ссылке");
 
     }
 
